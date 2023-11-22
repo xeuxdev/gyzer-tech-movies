@@ -3,14 +3,14 @@ import HeroSection from "../components/home/hero"
 import Popular from "../components/home/popular"
 import { useFetch } from "../hooks/useFetch"
 
-const randomMovieIndex = Math.floor(Math.random() * 20)
-
 export default function Home() {
   const { data, isLoading } = useFetch(
     `https://api.themoviedb.org/3/discover/movie?api_key=${
       import.meta.env.VITE_API_KEY
-    }&page=${randomMovieIndex}`
+    }&page=${1}`
   )
+
+  const randomMovieIndex = Math.floor(Math.random() * data?.results.length - 1)
 
   if (isLoading) {
     return (
