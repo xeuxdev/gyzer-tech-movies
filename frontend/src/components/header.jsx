@@ -4,21 +4,20 @@ export default function Header() {
   const location = useLocation()
 
   return (
-    <header className="h-16 w-full ">
-      <nav className="container flex items-center justify-between h-full">
+    <header className="w-full h-16 bg-gray-950 ">
+      <nav className="container flex items-center justify-between h-full px-5">
         {/* logo */}
 
-        <Link to={"/"} className="font-bold text-2xl italic text-blue-500">
+        <Link to={"/"} className="text-2xl italic font-bold text-blue-500">
           Gyzer
         </Link>
 
         {/* links */}
 
-        <div className="hidden md:flex">
+        <div className="flex">
           <div className="flex items-center gap-5">
             {["popular", "favourites"].map((item, index) => {
               const isActive = location.pathname === `/${item}`
-              console.log(location.pathname)
 
               return (
                 <Link
@@ -26,7 +25,7 @@ export default function Header() {
                   to={`/${item}`}
                   className={`${
                     isActive ? "underline underline-offset-8" : ""
-                  } capitalize font-medium hover:underline hover:underline-offset-8 transition-all duration-300`}
+                  } capitalize font-medium hover:underline hover:underline-offset-8 transition-all duration-300 text-white`}
                 >
                   {item}
                 </Link>

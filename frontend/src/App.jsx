@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from "./pages/home"
 import Favourites from "./pages/favourites"
 import Popular from "./pages/popular"
+import MovieDetails from "./pages/movie-details"
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "popular",
     element: <Popular />,
+  },
+  {
+    path: "/movie/:movieId",
+    element: <MovieDetails />,
   },
 ])
 function App() {
