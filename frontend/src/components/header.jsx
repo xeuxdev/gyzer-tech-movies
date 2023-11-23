@@ -16,21 +16,16 @@ export default function Header() {
 
         <div className="flex">
           <div className="flex items-center gap-5">
-            {["popular", "favourites"].map((item, index) => {
-              const isActive = location.pathname === `/${item}`
-
-              return (
-                <Link
-                  key={item + index}
-                  to={`/${item}`}
-                  className={`${
-                    isActive ? "underline underline-offset-8" : ""
-                  } capitalize font-medium hover:underline hover:underline-offset-8 transition-all duration-300 text-white`}
-                >
-                  {item}
-                </Link>
-              )
-            })}
+            <Link
+              to={`/favourites`}
+              className={`${
+                location.pathname === `/favourites`
+                  ? "underline underline-offset-8"
+                  : ""
+              } capitalize font-medium hover:underline hover:underline-offset-8 transition-all duration-300 text-white`}
+            >
+              favourites
+            </Link>
           </div>
         </div>
       </nav>

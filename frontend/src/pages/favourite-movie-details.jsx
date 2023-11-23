@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import Header from "../components/header"
 import { useFetch } from "../hooks/useFetch"
 import { API_URL, currencyFormatter, formatMinutesToHours } from "../utils"
@@ -8,10 +8,11 @@ import { useCookies } from "react-cookie"
 import { toast } from "react-hot-toast"
 import { useState } from "react"
 
-export default function MovieDetails() {
+export default function FavouriteMovieDetails() {
   const { movieId } = useParams()
-  const [cookies, setCookie] = useCookies(["gyzer_movie_user_id"])
-  const [isAdding, setIsAdding] = useState(false)
+  const [cookies] = useCookies(["gyzer_movie_user_id"])
+  const [isRemoving, setIsRemoving] = useState(false)
+  const navigate = useNavigate()
 
   const { data: movie, isLoading } = useFetch(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${
@@ -19,52 +20,25 @@ export default function MovieDetails() {
     }`
   )
 
-  async function handleAddMovieToFavourite() {
-    setIsAdding(true)
-    const randomString =
-      Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15)
-    if (!cookies.gyzer_movie_user_id) {
-      setCookie("gyzer_movie_user_id", randomString, {
-        maxAge: 365 * 60 * 60 * 24,
-        path: "/",
-        sameSite: "lax",
-      })
-    }
+  async function handleDeleteMovieFromFavourites() {
+    setIsRemoving(true)
 
-    const moviePayload = {
-      backdrop_path: movie?.backdrop_path,
-      id: movie?.id,
-      overview: movie?.overview,
-      poster_path: movie?.poster_path,
-      title: movie?.title,
-      vote_average: movie?.vote_average,
-      budget: movie?.budget,
-      revenue: movie?.revenue,
-      runtime: movie?.runtime,
-      release_date: movie?.release_date,
-      genres: movie?.genres,
-    }
-
-    const request = await fetch(`${API_URL}/api/favourites`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userId: cookies.gyzer_movie_user_id,
-        movie: moviePayload,
-      }),
-    })
+    const request = await fetch(
+      `${API_URL}/api/${cookies.gyzer_movie_user_id}/favourites/${movieId}`,
+      {
+        method: "PUT",
+      }
+    )
 
     const response = await request.json()
 
     if (response.status == 201 || response.status == 200) {
       toast.success(response.message)
+      navigate("/favourites")
     } else {
       toast.error(response.message)
     }
-    setIsAdding(false)
+    setIsRemoving(false)
   }
 
   if (isLoading) {
@@ -160,8 +134,8 @@ export default function MovieDetails() {
                 </p>
               </div>
 
-              <Button onClick={handleAddMovieToFavourite}>
-                {isAdding ? "Adding...." : "Add To Favourites"}
+              <Button onClick={handleDeleteMovieFromFavourites}>
+                {isRemoving ? "Removing...." : "Remove From Favourites"}
               </Button>
             </div>
           </div>

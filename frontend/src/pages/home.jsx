@@ -1,6 +1,6 @@
 import Header from "../components/header"
 import HeroSection from "../components/home/hero"
-import Popular from "../components/home/popular"
+import Movies from "../components/home/movies"
 import { useFetch } from "../hooks/useFetch"
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
       <Header />
 
       <HeroSection movie={data?.results[randomMovieIndex]} />
-      <Popular movies={data?.results} />
+      <Movies movies={data?.results} />
     </>
   )
 }

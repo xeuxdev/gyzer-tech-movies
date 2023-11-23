@@ -17,3 +17,11 @@ export function formatMinutesToHours(minutes, locale = "en-US") {
 
   return `${formattedHours} ${formattedMinutes}`
 }
+
+export const currencyFormatter = new Intl.NumberFormat("en-US", {
+  currency: "USD",
+  currencyDisplay: "symbol",
+  maximumFractionDigits: 2,
+})
+
+export const API_URL = import.meta.env.PROD ? "" : "http://localhost:3000"
