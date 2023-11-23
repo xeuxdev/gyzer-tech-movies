@@ -24,4 +24,6 @@ export const currencyFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 2,
 })
 
-export const API_URL = import.meta.env.PROD ? "" : "http://localhost:3000"
+export const API_URL = import.meta.env.PROD
+  ? "https://gyzer-movies-backend.onrender.com/"
+  : "http://localhost:3000"
