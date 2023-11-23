@@ -25,5 +25,5 @@ export const currencyFormatter = new Intl.NumberFormat("en-US", {
 })
 
 export const API_URL = import.meta.env.PROD
-  ? "https://gyzer-movies-backend.onrender.com/"
+  ? "https://gyzer-movies-backend.onrender.com"
   : "http://localhost:3000"
