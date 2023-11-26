@@ -37,12 +37,26 @@ cd frontend
 npm install
 ```
 
+- go back to the root directory
+
+```bash
+cd ../
+```
+
 - on the backend directory:
 
 ```bash
 cd backend
 npm install
 ```
+
+- navigate back to the root directory
+
+```bash
+cd ../
+```
+
+- open your code editor and proceed
 
 ### Adding Environment variables
 
@@ -63,6 +77,7 @@ VITE_API_KEY="d46ec9fa47c8144231606d2ec0e72435"
 - on the frontend directory, run the following command to start the server
 
 ```bash
+cd frontend
 npm run dev
 ```
 
@@ -71,6 +86,7 @@ To view the application in the browser, go to <http://localhost:5173>
 - on the backend directory, run the following command to start the server
 
 ```bash
+cd backend
 npm run start
 ```
 
