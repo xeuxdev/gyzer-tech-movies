@@ -28,9 +28,7 @@ export default function Home() {
       setIsLoading(false)
     }
 
-    return () => {
-      fetchData()
-    }
+    fetchData()
   }, [currPage])
 
   const handleScroll = async () => {
@@ -48,7 +46,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  if (!movies || movies.length == 0) {
+  if (movies.length == 0) {
     return (
       <div className="flex items-center justify-center w-full h-screen bg-gray-950">
         <p className="text-xl font-bold text-white">Loading....</p>
@@ -57,12 +55,12 @@ export default function Home() {
   }
 
   return (
-    <>
+    <section className="bg-gray-950">
       <Header />
 
       <HeroSection movie={movies?.[randomMovieIndex]} />
       <Movies movies={movies} />
       {isLoading && <Loader />}
-    </>
+    </section>
   )
 }

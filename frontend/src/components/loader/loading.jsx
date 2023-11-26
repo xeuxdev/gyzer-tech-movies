@@ -10,7 +10,7 @@ export default function Loader() {
       strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="text-white lucide lucide-loader animate-spin"
+      className="relative z-50 w-10 h-10 mx-auto my-5 text-white animate-spin "
     >
       <line x1="12" x2="12" y1="2" y2="6" />
       <line x1="12" x2="12" y1="18" y2="22" />
