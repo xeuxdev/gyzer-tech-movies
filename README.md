@@ -70,25 +70,6 @@ A website showcasing various movies from the TMDB API.
    cd ../
    ```
 
-### Adding Environment Variables
-
-#### Backend
-
-In the `backend` directory, add the following environment variable to your `.env` file:
-
-```bash
-MONGO_URI="mongodb+srv://xeuxdev:lkJBsZRk5fwib2NR@gyzer.syylqkr.mongodb.net/movie?retryWrites=true&w=majority"
-```
-
-#### Frontend
-
-In the `frontend` directory, add the following environment variable to your .env file:
-
-```bash
-
-VITE_API_KEY="d46ec9fa47c8144231606d2ec0e72435"
-```
-
 ### Running the Application
 
 `Frontend`
