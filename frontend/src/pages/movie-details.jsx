@@ -70,7 +70,9 @@ export default function MovieDetails() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center w-full h-screen bg-gray-950">
-        <p className="text-xl font-bold">Loading....</p>
+        <p className="text-xl font-bold text-white animate-pulse">
+          Loading....
+        </p>
       </div>
     )
   }

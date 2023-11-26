@@ -4,6 +4,7 @@ import { useFetch } from "../hooks/useFetch"
 import MovieCard from "../components/movie-card"
 import { useEffect, useState } from "react"
 import { API_URL } from "../utils"
+import Loader from "../components/loader/loading"
 
 export default function Favourites() {
   const [cookies] = useCookies(["gyzer_movie_user_id"])
@@ -19,8 +20,9 @@ export default function Favourites() {
 
   if (isLoading || !data?.movies) {
     return (
-      <div className="flex items-center justify-center w-full h-screen bg-gray-950">
-        <p className="text-2xl font-bold">Loading....</p>
+      <div className="flex items-center justify-center w-full h-screen gap-5 bg-gray-950">
+        <p className="text-2xl font-bold text-white">Loading....</p>
+        <Loader />
       </div>
     )
   }

@@ -1,16 +1,15 @@
-export default function Loader() {
+// eslint-disable-next-line react/prop-types
+export default function Loader({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="relative z-50 w-10 h-10 mx-auto my-5 text-white animate-spin "
+      className={`w-10 h-10 my-5 text-white animate-spin ${className}`}
     >
       <line x1="12" x2="12" y1="2" y2="6" />
       <line x1="12" x2="12" y1="18" y2="22" />

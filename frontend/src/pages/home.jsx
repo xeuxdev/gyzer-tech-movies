@@ -60,7 +60,7 @@ export default function Home() {
 
       <HeroSection movie={movies?.[randomMovieIndex]} />
       <Movies movies={movies} />
-      {isLoading && <Loader />}
+      {isLoading && <Loader className={"mx-auto"} />}
     </section>
   )
 }
