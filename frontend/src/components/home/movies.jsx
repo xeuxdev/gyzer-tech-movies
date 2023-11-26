@@ -11,7 +11,10 @@ export default function Movies({ movies }) {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-10 lg:grid-cols-4">
             {/* card */}
             {movies?.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard
+                key={movie.id + movie.title + Math.random() * 20}
+                movie={movie}
+              />
             ))}
           </div>
         </div>

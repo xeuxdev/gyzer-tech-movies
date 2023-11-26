@@ -92,7 +92,7 @@ app.put("/api/:userId/favourites/:movieId", async (req, res) => {
     { $pull: { favourites: { id: movieId } } }
   )
 
-  console.log(deleteFavouriteMovie)
+  //   console.log(deleteFavouriteMovie)
 
   if (deleteFavouriteMovie) {
     return res.json({ status: 200, message: "Movie deleted from favourites" })
