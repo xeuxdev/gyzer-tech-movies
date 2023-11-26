@@ -1,95 +1,129 @@
 # GyzerTech Movies
 
-A website show casing various movies from the TMDB API.
+A website showcasing various movies from the TMDB API.
 
 ## Features
 
-- A user-friendly interface for displaying the movie list and managing favorites.
-- View the details of the movie.
-- Add a movie to your favourites.
-- View all your favourite movies.
-- Remove a movie from your favourites.
+- User-friendly interface for displaying the movie list and managing favorites.
+- View details of a movie.
+- Add a movie to your favorites.
+- View all your favorite movies.
+- Remove a movie from your favorites.
 
 ## Getting Started
 
-### Clone the repository
+### Clone the Repository
 
-- Go ahead and clone the repository by running the following command:
+1. Clone the repository:
 
-```bash
-git clone https://github.com/xeuxdev/gyzer-tech-movies.git
-```
+   ```bash
+   git clone https://github.com/xeuxdev/gyzer-tech-movies.git
+   ```
 
-- navigate into the cloned folder
+2. Navigate into the cloned folder:
 
-```bash
-cd gyzer-tech-movies
-```
+   ```bash
+   cd gyzer-tech-movies
+   ```
 
-- you should see two directories, frontend and backend.
+   You should see two directories: `frontend` and `backend`.
 
-### Install the dependencies
+### Install Dependencies
 
-- on the frontend directory:
+#### Frontend
 
-```bash
-cd frontend
-npm install
-```
+1. Navigate to the frontend directory:
 
-- go back to the root directory
+   ```bash
+   cd frontend
+   ```
 
-```bash
-cd ../
-```
+2. Install dependencies:
 
-- on the backend directory:
+   ```bash
+   npm install
+   ```
 
-```bash
-cd backend
-npm install
-```
+3. Go back to the root directory:
 
-- navigate back to the root directory
+   ```bash
+   cd ../
+   ```
 
-```bash
-cd ../
-```
+#### Backend
 
-- open your code editor and proceed
+1. Navigate to the backend directory:
 
-### Adding Environment variables
+   ```bash
+   cd backend
+   ```
 
-- on the backend directory, add the following environment variables to your .env file
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Go back to the root directory:
+
+   ```bash
+   cd ../
+   ```
+
+### Adding Environment Variables
+
+#### Backend
+
+In the `backend` directory, add the following environment variable to your `.env` file:
 
 ```bash
 MONGO_URI="mongodb+srv://xeuxdev:lkJBsZRk5fwib2NR@gyzer.syylqkr.mongodb.net/movie?retryWrites=true&w=majority"
 ```
 
-- on the frontend directory, add the following environment variables to your .env file
+#### Frontend
+
+In the `frontend` directory, add the following environment variable to your .env file:
 
 ```bash
+
 VITE_API_KEY="d46ec9fa47c8144231606d2ec0e72435"
 ```
 
 ### Running the Application
 
-- on the frontend directory, run the following command to start the server
+`Frontend`
+
+Navigate to the frontend directory:
 
 ```bash
 cd frontend
+```
+
+Run the following command to start the server:
+
+```bash
 npm run dev
 ```
 
-To view the application in the browser, go to <http://localhost:5173>
+The application should be accessible at <http://localhost:5173>.
 
-- on the backend directory, run the following command to start the server
+`Backend`
+Navigate to the backend directory:
 
 ```bash
 cd backend
+```
+
+Run the following command to start the server:
+
+```bash
 npm run start
 ```
 
-The application should be running on the port, <http://localhost:3000>
+The application should be running on <http://localhost:3000>.
 
-To view the deployed version of the app go to <https://gyzer-tech-movies.vercel.app/>
+#### Deployed Version
+
+To view the deployed version of the app, visit <https://gyzer-tech-movies.vercel.app/>.
+
+Note: API requests from the backend might be subjected to cold start times on the deployed version.
